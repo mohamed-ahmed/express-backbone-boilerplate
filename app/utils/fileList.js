@@ -125,7 +125,7 @@ FileList.prototype = new (function () {
     var globPattern = /[*?\[\{]/;
 
     var _addMatching = function (pat) {
-                var matches = glob.globSync(pat);
+                var matches = glob.sync(pat);
                 this.items = this.items.concat(matches);
             }
 
