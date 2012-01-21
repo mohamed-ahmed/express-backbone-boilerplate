@@ -149,7 +149,7 @@ FileList.prototype = new (function () {
                     if (typeof pat == 'string') {
                         // Glob, look up files
                         if (/[*?]/.test(pat)) {
-                            matches = glob.globSync(pat);
+                            matches = glob.sync(pat);
                             excl = excl.concat(matches);
                         }
                         // String for regex
