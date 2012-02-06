@@ -39,7 +39,8 @@ app.configure(function() {
         src: __dirname + '/app/assets', 
         dest: __dirname + '/public',
         compile: compile })
-        );   
+        );
+    app.use(express['static'](__dirname + '/public')); 
     
     app.set('view engine', 'jade');
     app.set('views', __dirname + '/app/views');
@@ -48,13 +49,12 @@ app.configure(function() {
 // run NODE_ENV=development node server.js
 app.configure('development', function() {
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-    app.use(express['static'](__dirname + '/public')); 
+    //app.use(express['static'](__dirname + '/public')); 
 });
     
 // run NODE_ENV=production node server.js
 app.configure('production', function() {
     app.use(express.errorHandler());
-    app.use(express['static'](__dirname + '/public')); 
     //app.use(gzippo.staticGzip(__dirname + '/public', {maxAge: 31557600000})); 
 });
 
