@@ -1,5 +1,5 @@
 var express = require('express')
-  , app = express.createServer()
+  , app = express()
   //, gzippo = require('gzippo')
   , stylus = require('stylus')
   , nib = require('nib')
